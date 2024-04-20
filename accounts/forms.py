@@ -10,7 +10,7 @@ from django.contrib.auth.forms import (
 )
 from django.contrib.auth.forms import PasswordResetForm
 from course.models import Program
-from .models import User, Student, Parent, RELATION_SHIP, LEVEL, GENDERS
+from .models import ORDER_TYPE, User, Student, Parent, RELATION_SHIP, LEVEL, GENDERS
 
 
 class StaffAddForm(UserCreationForm):
@@ -208,6 +208,16 @@ class StudentAddForm(UserCreationForm):
         label="Vessel Ownership",
     )
 
+    vessel_type = forms.CharField(
+        widget=forms.Select(
+            choices=ORDER_TYPE,
+            attrs={
+                "class": "browser-default custom-select form-control",
+            },
+        ),
+        label="Vessel Carrying Type",
+    )
+
     level = forms.CharField(
         widget=forms.Select(
             choices=LEVEL,
@@ -244,6 +254,16 @@ class StudentAddForm(UserCreationForm):
             }
         ),
         label="Vessel Capacity",
+    )
+
+    vessel_volume = forms.IntegerField(
+        widget=forms.TextInput(
+            attrs={
+                "type": "vessel_volume",
+                "class": "form-control",
+            }
+        ),
+        label="Vessel Volume",
     )
 
     password1 = forms.CharField(
@@ -290,6 +310,8 @@ class StudentAddForm(UserCreationForm):
         user.address = self.cleaned_data.get("address")
         user.email = self.cleaned_data.get("email")
         user.capacity = self.cleaned_data.get("capacity")
+        user.capacity = self.cleaned_data.get("vessel_volume")
+        user.capacity = self.cleaned_data.get("vessel_type")
 
         # Generate a username based on first and last name and registration date
         registration_date = datetime.now().strftime("%Y")
@@ -363,6 +385,15 @@ class ProfileUpdateForm(UserChangeForm):
         ),
     )
 
+    vessel_type = forms.CharField(
+        widget=forms.Select(
+            choices=ORDER_TYPE,
+            attrs={
+                "class": "browser-default custom-select form-control",
+            },
+        ),
+    )
+
     phone = forms.CharField(
         widget=forms.TextInput(
             attrs={
@@ -381,6 +412,16 @@ class ProfileUpdateForm(UserChangeForm):
             }
         ),
         label="Capacity",
+    )
+
+    vessel_volume = forms.IntegerField(
+        widget=forms.TextInput(
+            attrs={
+                "type": "number",
+                "class": "form-control",
+            }
+        ),
+        label="Volume",
     )
 
     address = forms.CharField(
@@ -404,6 +445,8 @@ class ProfileUpdateForm(UserChangeForm):
             "address",
             "capacity",
             "picture",
+            "vessel_volume",
+            "vessel_type",
         ]
 
 

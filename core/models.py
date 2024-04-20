@@ -12,7 +12,7 @@ POST = (
     (EVENTS, "Event"),
 )
 
-SHANGHAI_PORT = "Shanghai Port"
+Nhava_Sheva_Port = "Nhava_Sheva_Port"
 SINGAPORE_PORT = "Port of Singapore"
 ROTTERDAM_PORT = "Port of Rotterdam"
 HONG_KONG_PORT = "Port of Hong Kong"
@@ -24,7 +24,7 @@ LONG_BEACH_PORT = "Port of Long Beach"
 DUBAI_PORT = "Port of Dubai"
 
 SEMESTER = (
-    (SHANGHAI_PORT, "Shanghai Port"),
+    (Nhava_Sheva_Port, "Nhava_Sheva_Port"),
     (SINGAPORE_PORT, "Port of Singapore"),
     (ROTTERDAM_PORT, "Port of Rotterdam"),
     (HONG_KONG_PORT, "Port of Hong Kong"),

@@ -21,6 +21,18 @@ LEVEL = (
     (GOODS_CARRIER, "Goods Carrier"),
 )
 
+PERISHABLE = "PERISHABLE"
+DELICATE = "DELICAT"
+OIL = "OIL"
+NORMAL = "NORMAL"
+
+ORDER_TYPE = (
+    (PERISHABLE, "PERISHABLE"),
+    (DELICATE, "DELICAT"),
+    (NORMAL, "NORMAL"),
+    (OIL, "OIL"),
+)
+
 FATHER = "Father"
 MOTHER = "Mother"
 BROTHER = "Brother"
@@ -81,6 +93,10 @@ class User(AbstractUser):
     )
     email = models.EmailField(blank=True, null=True)
     capacity = models.IntegerField(blank=True, null=True)
+    vessel_volume = models.IntegerField(blank=True, null=True)
+    vessel_type = models.CharField(
+        max_length=20, choices=ORDER_TYPE, blank=True, null=True
+    )
 
     username_validator = ASCIIUsernameValidator()
 

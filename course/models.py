@@ -19,6 +19,19 @@ YEARS = (
     (4, "6"),
 )
 
+PERISHABLE = "PERISHABLE"
+DELICATE = "DELICAT"
+OIL = "OIL"
+NORMAL = "NORMAL"
+
+ORDER_TYPE = (
+    (PERISHABLE, "PERISHABLE"),
+    (DELICATE, "DELICAT"),
+    (NORMAL, "NORMAL"),
+    (OIL, "OIL"),
+)
+
+
 # LEVEL_COURSE = "Level course"
 CARGO_SHIP = "Cargo Ship"
 AIRPLANE = "Airplane"
@@ -118,6 +131,8 @@ class Course(models.Model):
     year = models.IntegerField(choices=YEARS, default=0)
     semester = models.CharField(choices=SEMESTER, max_length=200)
     is_elective = models.BooleanField(default=False, blank=True, null=True)
+    volume = models.IntegerField(null=True, default=0)
+    order_type = models.CharField(choices=ORDER_TYPE, max_length=200, null=True)
 
     objects = CourseManager()
 

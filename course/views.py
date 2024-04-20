@@ -454,6 +454,7 @@ def course_registration(request):
 
         # Update user's capacity
         request.user.capacity -= course.credit
+        request.user.vessel_volume -= course.volume
         request.user.save()
 
         for s in range(0, len(ids)):
@@ -543,6 +544,7 @@ def course_drop(request):
             for obj in taken_courses:
                 # Add the credits back to the student's capacity
                 request.user.capacity += obj.course.credit
+                request.user.vessel_volume += obj.course.volume
                 obj.delete()
 
         # Save the updated capacity

@@ -100,7 +100,7 @@
             </div>
 
             <div class="table-responsive p-0 px-2 mt-2">
-                <div class="table-title"><u>Port of Hong Kong</u></div>
+                <div class="table-title"><u>Nhava_Sheva_Port</u></div>
                 <div class="table-shadow">
                     <table class="table">
                         <thead>
@@ -115,7 +115,129 @@
                         </thead>
                         <tbody>
                             {% for course in courses %}
-                            {% if course.semester == "Port of Hong Kong" %}
+                            {% if course.semester == "Nhava_Sheva_Port" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Elective</td>
+                                {% else %}
+                                <td>Core</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        No Orders.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>SINGAPORE_PORT</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mark</th>
+                                <th>Order Code</th>
+                                <th>Order Contents</th>
+                                <th>Order Weight</th>
+                                <th>No. of Items</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "Port of Singapore" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Elective</td>
+                                {% else %}
+                                <td>Core</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        No Orders.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>Port of Rotterdam</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mark</th>
+                                <th>Order Code</th>
+                                <th>Order Contents</th>
+                                <th>Order Weight</th>
+                                <th>No. of Items</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "Port of Rotterdam" %}
                             <tr>
                                 <th scope="row">
                                     <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
@@ -222,7 +344,7 @@
             </div>
 
             <div class="table-responsive p-0 px-2 mt-2">
-                <div class="table-title"><u>Port of Hong Kong</u></div>
+                <div class="table-title"><u>Port of Busan</u></div>
                 <div class="table-shadow">
                     <table class="table">
                         <thead>
@@ -237,7 +359,7 @@
                         </thead>
                         <tbody>
                             {% for course in courses %}
-                            {% if course.semester == "Port of Hong Kong" %}
+                            {% if course.semester == "Port of Busan" %}
                             <tr>
                                 <th scope="row">
                                     <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
@@ -283,7 +405,7 @@
             </div>
 
             <div class="table-responsive p-0 px-2 mt-2">
-                <div class="table-title"><u>Port of Hong Kong</u></div>
+                <div class="table-title"><u>Port of Antwerp</u></div>
                 <div class="table-shadow">
                     <table class="table">
                         <thead>
@@ -298,7 +420,7 @@
                         </thead>
                         <tbody>
                             {% for course in courses %}
-                            {% if course.semester == "Port of Hong Kong" %}
+                            {% if course.semester == "Port of Antwerp" %}
                             <tr>
                                 <th scope="row">
                                     <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
@@ -342,6 +464,251 @@
                     </table>
                 </div>
             </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>Port of Hamburg</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mark</th>
+                                <th>Order Code</th>
+                                <th>Order Contents</th>
+                                <th>Order Weight</th>
+                                <th>No. of Items</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "Port of Hamburg" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Elective</td>
+                                {% else %}
+                                <td>Core</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        No Orders.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>Port of Los Angeles</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mark</th>
+                                <th>Order Code</th>
+                                <th>Order Contents</th>
+                                <th>Order Weight</th>
+                                <th>No. of Items</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "Port of Los Angeles" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Elective</td>
+                                {% else %}
+                                <td>Core</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        No Orders.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>Port of Long Beach</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mark</th>
+                                <th>Order Code</th>
+                                <th>Order Contents</th>
+                                <th>Order Weight</th>
+                                <th>No. of Items</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "Port of Long Beach" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Elective</td>
+                                {% else %}
+                                <td>Core</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        No Orders.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>Port of Dubai</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mark</th>
+                                <th>Order Code</th>
+                                <th>Order Contents</th>
+                                <th>Order Weight</th>
+                                <th>No. of Items</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "Port of Dubai" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Elective</td>
+                                {% else %}
+                                <td>Core</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        No Orders.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 </form>

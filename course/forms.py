@@ -25,6 +25,7 @@ class CourseAddForm(forms.ModelForm):
             "year": "No. of Items",
             "semester": "Docking Port",
             "summary": "Reciever Address",
+            "is_elective": "is_urgent",
         }
 
     def __init__(self, *args, **kwargs):
@@ -37,6 +38,8 @@ class CourseAddForm(forms.ModelForm):
         self.fields["level"].widget.attrs.update({"class": "form-control"})
         self.fields["year"].widget.attrs.update({"class": "form-control"})
         self.fields["semester"].widget.attrs.update({"class": "form-control"})
+        self.fields["volume"].widget.attrs.update({"class": "form-control"})
+        self.fields["order_type"].widget.attrs.update({"class": "form-control"})
 
 
 class CourseAllocationForm(forms.ModelForm):
